@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="br.com.pirus.cordova.plugins.echo" version="1.0.0">
+  <name>Echo</name>
+  <description>Plugin para teste de plugin</description>
+  <license>Apache 2.0 License</license>
+  <keywords>android,test,echo</keywords>
+  
+  <js-module src="www/echo.js" name="Echo">
+    <merges target="window.plugins" />
+  </js-module>
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Echo">
+        <param name="android-package" value="br.com.pirus.cordova.plugins.echo.Echo" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/Echo.java" target-dir="src/br/com/pirus/cordova/plugins/echo" />
+  </platform>
+</plugin>
